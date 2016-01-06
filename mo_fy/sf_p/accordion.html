@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+	*{padding: 0;margin: 0;}
+	body{ background:url(imagese/back.gif) no-repeat;}
+	#list{ width: 1280px; height: 500px;overflow:hidden; position:relative; margin:70px auto; border:1px solid red;}
+			
+	#list li{width:1130px;position: absolute; list-style: none;padding-left:30px;top:0px;eft:0px;}
+	#list li span{ width: 30px; height: 100%; position: absolute;left:0;top:0; text-align:center;font-size:24px;}
+	#list .cont_size1{background:#006666}
+	#list .cont_size2{background:#d3e7f2;}
+	#list .cont_size3{ background:#F3C;}
+	#list .cont_size4{ background:#0FF;}
+	#list .cont_size5{ background:#0F3;}
+</style>
+<script src="move.js"></script>
+<script>
+window.onload=function (){
+	var aLi=document.getElementsByTagName('li');
+	var aSpan=document.getElementsByTagName('span');
+	var liW=aLi[0].offsetWidth;
+	var sW=aSpan[0].offsetWidth;
+	
+	// 默认left
+	for (var i=0; i<aLi.length; i++)
+	{
+		if (i != 0)
+		{
+			aLi[i].style.left=liW+(i-1)*sW+'px';//li位置
+		}
+	}
+	for(var i=0;i<aSpan.length;i++)
+	{
+		(function(index){
+			aSpan[i].onmouseover=function(){
+			for(var i=0;i<aLi.length;i++)
+			{
+				var n=aLi[i];
+				if(i<=index)
+				{
+					move(n,{left:i*sW});
+				}
+				else
+				{
+					move(n,{left:liW+(i-1)*sW});
+				}
+			}
+			};	
+		})(i);
+		
+	}
+}
+</script>
+</head>
+<body>
+	<div class="box">
+		<ul id="list">
+			<li>
+				<span class="cont_size1">海纳百川</span>
+				<img src="imagese/j5.gif"/>
+			</li>
+			<li>
+				<span class="cont_size2">第一要有识</span>
+				<img src="imagese/j4.gif"/>
+			</li>
+			<li>
+				<span class="cont_size3">第一要有恒</span>
+				<img src="imagese/j1.gif"/>
+			</li>
+			<li>
+				<span class="cont_size4">有识则之学问无尽</span>
+				<img src="imagese/j2.gif"/>
+			</li>
+			<li>
+				<span class="cont_size5">有恒则断无不成之事</span>
+				<img src="imagese/j3.gif"/>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

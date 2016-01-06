@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+* { margin:0; padding:0; }
+body{ background:url(images/back.jpg) no-repeat;overflow: hidden;}
+.des_btn{ width:100%; position:absolute; left:30%; top:8%;}
+.des_btn input{ padding:10px 20px; border-radius:8px; outline:none; color:#fff; background:#96F; font-size:20px;}
+
+.des_box{ width: 700px;height: 400px;overflow:hidden;margin:160px auto;position:relative;}
+.des_con{ height: 400px; position: absolute;left: 0; top:0;  width: 2800px;}
+.des_con li{width:700px; height:100%; float: left;}
+
+</style>
+<script src="move.js"></script>
+<script>
+window.onload=function (){
+	var oBtn=document.getElementById('des_btn');
+	var aInp=oBtn.getElementsByTagName('input');
+	var oCon=document.getElementById('des_con');
+	var aLi=oCon.getElementsByTagName('li');
+
+	for(var i=0;i<aInp.length;i++){
+		(function(index){
+			aInp[i].onclick=function(){
+				move(oCon,{left:-aLi[0].offsetWidth*index});
+			}
+		})(i);
+	}
+
+
+
+
+
+
+	var b_Flag=false;
+	var Row=4;
+	var Col=7;
+	var W=700;
+	var H=400;
+	var width=W/Col;
+	var height=H/Row;
+	var aPos=[];
+
+
+
+		/*for(var r=0;r<Row;r++)
+		{
+			for(var c=0;c<Col;c++)
+			{
+				var oSpan=document.createElement('span');
+				oSpan.style.width=width+'px';
+				oSpan.style.height=height+'px';
+				var top=r*height;
+				var left=c*width;
+				oSpan.style.left=left+'px';
+				oSpan.style.top=top+'px';
+				oSpan.style.backgroundPosition='-'+left+'px -'+top+'px';
+				aPos.push(oSpan);
+				oCon.appendChild(oSpan);
+			}
+		}
+
+		var oBtn=document.getElementById('go_btn');
+		var oImg=document.getElementById('img1');
+		var now=0;
+
+		oBtn.onclick=function()
+		{
+			if(b_Flag)
+			{
+				return;
+			}
+			b_Flag=true;
+			now++;
+			for(var i=0;i<aPos.length;i++)
+			{
+				aPos[i].style.opacity=0;
+				aPos[i].style.backgroundImage='url(images/'+now%4+'.jpg)';
+			}
+			var n=0;
+			var timer=setInterval(function(){
+				(function(index){
+					move(aPos[n],{opacity:1},{complete:function(){
+						if(index == aPos.length-1)
+						{
+							b_Flag=false;
+							oImg.src='images/'+now%4+'.jpg';
+						}
+					}});
+				})(n);
+
+				n++;
+				if(n == aPos.length)
+				{
+					clearInterval(timer);
+				}
+			},100);
+		}*/
+	
+};
+</script>
+</head>
+<body>
+	<div class="des_btn" id="des_btn">
+    	<input type="button" value="分块运动" id="fk"/>
+        <input type="button" value="翻页运动" id="fy" />
+        <input type="button" value="爆炸运动" id="bz"/>
+        <input type="button" value="颗粒运动" id="kl" />
+    </div>
+	<div class="des_box">
+		<ul class="des_con" id="des_con">
+			<li class="des_fk active">
+				<img src="images/0.jpg" id="img1" />
+			</li>
+			<li class="des_fk">
+				<img src="images/2.jpg" id="img1" />
+			</li>
+			<li class="des_fk">
+				<img src="images/1.jpg" id="img1" />
+			</li>
+			<li class="des_fk">
+				<img src="images/3.jpg" id="img1" />
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

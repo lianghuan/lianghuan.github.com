@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{ background:#FFCC99;}
+		*{ padding: 0; margin: 0; list-style: none;}
+		.page_list{width:1100px; height: 450px;margin:50px auto;}
+		.page_list li{width: 336px;height: 200px;margin: 10px; float: left; border: 1px solid yellow; opacity:1;}
+		.page_btn{ cursor:pointer; width:100px; height:30px; background:url(images/play.png) no-repeat; display:block; margin-top:20px; position:relative; left:50%; top:0; margin-left:-50px;}
+	</style>
+	<script src="jquery-1.7.2.js"></script>
+	<script>
+	$(function(){
+		var oBtn=$('.page_btn');
+		var aLi=$('li');
+		
+		var aPos=[];
+		aLi.each(function(){ //循环
+			aPos.push({
+				left:$(this).offset().left,
+				top:$(this).offset().top
+			});
+		});
+
+		aLi.each(function(index){
+			$(this).css({
+				left:aPos[index].left,
+				top:aPos[index].top,
+				position:'absolute',
+				margin:0
+			});
+		});
+
+		var bclick=false;
+		oBtn.click(function(){
+			if(bclick){
+				return;
+			}
+			else{
+				bclick=true;
+				var n=0;
+				var timer=setInterval(function(){
+					(function(index){
+						aLi.eq(n).stop().animate({width:0,height:0,left:0,top:0,opacity:0},{
+							complete:function(){
+								if(index == aLi.length-1)
+								{
+									end();
+								}
+							}
+						});
+					})(n);
+					n++;
+					if(n == aLi.length)
+					{
+						clearInterval(timer);
+					}
+				},200);
+				}
+		});
+
+		function end()
+		{
+			var n=aLi.length-1;
+			var timer=setInterval(function(){
+				aLi.eq(n).stop().animate({
+					left:aPos[n].left+'px',
+					top:aPos[n].top+'px',
+					width:336+'px',
+					height:200+'px',
+					opacity:1
+				});
+				n--;
+				if(n == -1)
+				{
+					clearInterval(timer);
+				}
+			},200);
+		}
+	});
+	</script>
+</head>
+<body>
+		<ul class="page_list">
+			<li><img src="images/1.jpg"/></li>
+			<li><img src="images/2.jpg"/></li>
+			<li><img src="images/3.jpg"/></li>
+			<li><img src="images/4.jpg"/></li>
+			<li><img src="images/5.jpg"/></li>
+			<li><img src="images/6.jpg"/></li>
+		</ul>
+		<span class="page_btn"></span>
+</body>
+</html>

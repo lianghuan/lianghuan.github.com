@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ padding:0; margin:0; list-style:none;}
+body{ background:#99F;}
+.clearfix:after{ display:block; clear:both; content:'';}
+.clearfix{ zoom:1};
+
+#wall{height:500px;z-index:2;margin-left:20px;}
+#wall_btn{width:80px;height:40px; border-radius:6px; position:absolute; left:100px; top:20px;font-size:15px;cursor:pointer; font-family:'微软雅黑';}
+#wall .wall_con{width:900px;padding:10px;margin-left:300px;}
+#wall .wall_con ul li{padding:10px;float:left;border:1px solid #FF0;border-radius:10px;box-shadow:2px 4px 4px rgba(0,0,255,0.5);float:left;margin:10px;width:200px;height:200px;}
+#wall .wall_con ul .active{background-color:red;}
+</style>
+<script src="base.js"></script>
+<script src="pic.js"></script>
+</head>
+	
+<body>
+	<div id="wall" class="wall">
+		<input type="button" value="随即换" id="wall_btn"/>
+		<div class="wall_con">
+			<ul>
+				<li><img src="images/mg8.gif"/></li>
+				<li><img src="images/mg2.gif"/></li>
+				<li><img src="images/mg3.gif"/></li>
+				
+				<li><img src="images/mg4.gif"/></li>
+				<li><img src="images/mg6.gif"/></li>
+				<li><img src="images/mg5.gif"/></li>
+				
+				<li><img src="images/mg9.gif"/></li>
+				<li><img src="images/mg1.gif"/></li>
+				<li><img src="images/mg7.gif"/></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

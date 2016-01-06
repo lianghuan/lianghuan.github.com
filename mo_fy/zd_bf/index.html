@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ padding:0; margin:0; list-style:none;}
+.ZD_card{ position:relative; min-height:700px;}
+.ZD_card .tit{ height:140px; position:relative; padding-bottom:30px; overflow:hidden;}
+.ZD_card .tit img{ display:none;}
+.ZD_card .tit i{ position:absolute; background:url(../images/tit4.png) no-repeat 0 0; opacity:0; filter:alpha(opacity:0);}
+.card{ width:1000px; margin:0 auto;}
+.card .box{ width:900px; margin:0 auto; height:356px; overflow:hidden; position:relative;}
+.card .nav{ width:4500px; position:absolute; top:0; left:0;}
+.card .nav>li{ float:left; width:900px;}
+.card .pot{ width:170px; position:absolute; bottom:20px; left:355px; z-index:10;}
+.card .pot>li{ width:12px; height:12px; background:#ccc; border:1px solid #0CC; border-radius:50%; margin:0 10px; float:left; cursor:pointer;}
+.card .pot>li.active{ background:#0F3;}
+.card .box .left{ width:30px; height:39px; position:absolute; background:url(images/c24.png) no-repeat 0 -150px; z-index:5; left:20px; top:160px; opacity:0.6; filter:alpha(opacity:60); display:none;}
+.card .box .right{ width:30px; height:39px; position:absolute; background:url(images/c24.png) no-repeat 0 -190px; z-index:5; right:20px; top:160px; opacity:0.6; filter:alpha(opacity:60); display:none;}
+</style>
+<script src="base.js"></script>
+<script>
+window.onload=function(){
+	var oCard=document.getElementById('_card');   //选项卡
+	var bStart=true;
+	var oPot=document.getElementById('pot');
+	var aBtn=oPot.getElementsByTagName('li');
+	var oList=oCard.getElementsByTagName('ul')[0];
+	var w1=oList.children[0].offsetWidth;
+	var total=oList.children.length;
+	var n=0;  //当前下标
+	
+	for(var i=0;i<aBtn.length;i++)
+	{
+		(function(index){
+			aBtn[i].onmouseover=function(){
+				n=index;
+				tick();
+			};	
+		})(i);
+	}
+			
+	//向右
+	var oR=getByClass(oCard,'right')[0];
+	oR.onclick=function(){
+		n++;
+		if(n>=total)
+		{
+			n=0;	
+		}
+		tick();	
+	};
+			
+			//向左
+	var oL=getByClass(oCard,'left')[0];
+	oL.onclick=function(){
+		n--;
+		if(n==-1)
+		{
+			n=total-1;	
+		}
+		tick();	
+	};
+			
+	//轮播
+	
+		clearInterval(timer);
+		var timer=setInterval(function(){
+			n++;
+			if(n>=total)
+			{
+				n=0;	
+			}
+			tick();		
+		},3000);
+				
+		//移入停止
+		oCard.onmouseover=function(){
+			oL.style.display='block';
+			oR.style.display='block';
+			clearInterval(timer);	
+		};
+		
+		//移出继续
+		oCard.onmouseout=function(){
+			oL.style.display='none';
+			oR.style.display='none';
+			timer=setInterval(function(){
+				n++;
+				if(n>=total)
+				{
+					n=0;	
+				}
+				tick();		
+			},3000);	
+		};	
+	
+		function tick()
+		{
+			for(var i=0;i<aBtn.length;i++)
+			{
+				aBtn[i].className='';	
+			}
+			aBtn[n].className='active';
+			move(oList,{left:-n*w1},{duration:500});		
+		}
+};
+</script>
+</head>
+
+<body>
+	<div class="ZD_card">
+    <div class="card" id="card">
+        <div class="box" id="_card">
+            <span class="left"></span>
+            <span class="right"></span>
+            <ul class="clearfix nav">
+                <li>
+                    <img src="images/word/14.jpg"/>
+                </li>
+                <li>
+                    <img src="images/word/a43.jpg"/>
+                </li>
+                <li>
+                    <img src="images/word/84.jpg"/>
+                </li>
+                <li>
+                    <img src="images/word/d47.jpg"/>
+                </li>
+                <li>
+                    <img src="images/word/eb.jpg"/>
+                </li>
+            </ul>
+            <ul class="pot clearfix" id="pot">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

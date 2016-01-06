@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	body{ background: url(back.jpg);}
+	.magic{
+		width: 200px;
+		height: 200px;
+		position: absolute;;
+		left: 50%;
+		top: 50%;
+		margin-left: -100px;
+		margin-top: -100px;
+		transform:perspective(800px) rotateY(-60deg) rotateX(30deg);
+		transform-style: preserve-3d;
+	}
+	.magic div{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		border: 1px solid  #999;
+		font-size: 50px;
+		font-weight: bolder;;
+		font-family: '微软雅黑';
+		text-align: center;;
+		line-height: 200px;
+		text-shadow:0 0 10px #fff;
+	}
+	.front{
+		background:rgba(102,255,255,0.5);
+		transform:translateZ(100px);
+	}
+	.back{
+		background: rgba(255,204,102,0.5);
+		transform:translateZ(-100px);
+	}
+	.left{
+		background: rgba(204,153,255,0.5); 
+		transform:translateX(-100px) rotateY(90deg);
+	}
+	.top{
+		background: rgba(255,0,51,0.5); ;
+		transform:translateY(-100px) rotateX(90deg);
+	}
+	.bottom{
+		background: rgba(204,255,0,0.5);
+		transform:translateY(100PX) rotateX(90deg);
+	}
+	.right{
+		background: rgba(0,102,255,0.5);
+		transform:translateX(100px) rotateY(90deg);
+	}
+	
+</style>
+<script>
+	window.onload=function(){
+		var oMagic=document.querySelector('.magic');
+		var aDiv=oMagic.getElementsByTagName('div');
+		var y=-60;
+		var x=30;
+
+		var bLeft=false,
+			bRight=false,
+			bUp=false,
+			bDown=false;
+
+		document.onkeydown=function(ev){
+			var oEvent=ev || event;
+			switch(oEvent.keyCode){
+				case 37:
+					bLeft=true;
+					break;
+				case 38:
+					bUp=true;
+					break;
+				case 39:
+					bRight=true;
+					break;
+				case 40:
+					bDown=true;
+					break;
+			}
+		};
+		document.onkeyup=function(ev){
+			var oEvent=ev || event;
+			switch(oEvent.keyCode){
+				case 37:
+					bLeft=false;
+					break;
+				case 38:
+					bUp=false;
+					break;
+				case 39:
+					bRight=false;
+					break;
+				case 40:
+					bDown=false;
+					break;
+			}
+		};
+
+		 setInterval(function(){
+            if(bLeft){
+                y-=10;
+            }
+            if(bRight){
+                y+=10;
+            }
+            if(bUp){
+                x+=10;
+            }
+            if(bDown){
+                x-=10;
+            }
+            oMagic.style.transform='perspective(800px) rotateY('+y+'deg) rotateX('+x+'deg)';
+        },30);
+
+		 oMagic.onmousemove=function(ev){
+		 	var oEvent=ev || event;
+		 	return false;
+		 };
+		
+	};
+</script>
+</head>
+<body>
+	<div class="magic">
+		<div class="front">1</div>
+		<div class="back">2</div>
+		<div class="left">3</div>
+		<div class="top">4</div>
+		<div class="bottom">5</div>
+		<div class="right">6</div> 
+	</div>
+</body>
+</html>

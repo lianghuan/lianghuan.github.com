@@ -1,0 +1,118 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* 头部*/
+body{ height:1000px;}
+.header{ background:#f5f5f5; margin:0 auto; max-width:581px; min-width:320px;}
+.head{ width:100%; }
+.head h1{ background:url(../img/logo.png) no-repeat; width:170px; height:42px; text-indent:-999em; margin:0 auto;}
+.head h1 a{ display:block; height:100%;}
+.sou{ width:92%; height:36px; margin-left:2%; border:1px solid #e2e5e6; background: url(../img/sousuo.png) no-repeat 2px center #fff; padding-left:20px; border-sizing:border-box; margin-bottom:10px;}
+
+.head_t{ width:100%; height:184px; position:relative;}
+.head_t img{ width:100%; height:100%;}
+.head_t .opa{ width:26%; height:10px; background:rgba(0,0,0,0.5); position:absolute; left:28%;bottom:10px; border-radius:5px; margin-left:35px;} 
+.head_t{ margin-bottom:4px;}
+.head_t li{ width:6px; height:6px; border-radius:50%; background:#fff;position:absolute; left:37%; bottom:12px; }
+.head_t li:hover{ background:#dd3832;}
+.head_t .dian1{ position:absolute; left:39%; bottom:12px;}
+.head_t .dian2{ position:absolute; left:41%; bottom:12px;}
+.head_t .dian3{ position:absolute; left:43%; bottom:12px;}
+.head_t .dian4{ position:absolute; left:45%; bottom:12px;}
+.head_t .dian5{ position:absolute; left:47%; bottom:12px;}
+.head_t .dian6{ position:absolute; left:49%; bottom:12px;}
+.head_t .dian7{ position:absolute; left:51%; bottom:12px;}
+.head_t .dian8{ position:absolute; left:53%; bottom:12px;}
+
+.banner{ width:100%;padding-bottom:16px;}
+.banner li{ width:24%; height:70px; float:left; text-align:center; margin-top:14px;}
+.banner .first{ width:28%;}
+.banner p{ margin-top:8px;}
+.banner p a{ color:#333;}
+.banner li i{background:url(../img/4.png) no-repeat; width:48px; height:48px;  display:block; margin:0 auto; }
+.banner .pic{ background-position: 0 0;}
+.banner .pic1{ background-position:0 -48px;}
+.banner .pic2{ background-position:0 -96px;}
+.banner .pic3{ background-position:0 -144px;}
+.banner .pic4{ background-position:0 -192px;}
+.banner .pic5{ background-position:0 -240px;}
+.banner .pic6{ background-position:0 -288px;}
+.banner .pic7{ background-position:0 -336px;}
+/*内容*/
+.con{ width:96%; margin-left:2%; margin-right:2%; border:1px solid #e1e4e5; border-sizing:border-box; background:#fff;}
+.con_l{ width:21%; height:179px; border-right:1px solid #e1e4e5; margin-top:8px;border-sizing:border-box; border-bottom:1px solid #e1e4e5; margin-left:8px;}
+.con_l h3{ margin-bottom:8px; padding-top:8px;}
+.con_l h3 a{ font-size:18px; color:#e72900;}
+.con_l p{margin-bottom:10px;}
+.con_l p a{ color:#333;}
+.con_l .pit{ text-align:center; margin-left:0;}
+.con_r{ width:73%;height:186px;}
+.c_r_t{ width:100%; height:93px; border-bottom:1px solid #e1e4e5;border-sizing:border-box;}
+.c_r_t  .zhua{ padding-top:8px; margin-left:2px;}
+.c_r_t div{ margin-top:26px; margin-left:3%; line-height:24px;}
+.c_r_t div p a{ color:#333;}
+.c_r_t div .p1 a{ font-size:14px;}
+/*热门市场*/
+.hot{ width:96%;border:1px solid #e1e4e5; background:#fff; margin:10px 2% 0 2%;}
+.hot h3{ width:100%; height:34px; line-height:34px; color:#333; font-size:12px;}
+.hot h3 a{ padding-left:12px;color:#333; font-size:12px; }
+.hotlist{ width:100%;}
+.hotlist p{ margin-top:8px;}
+.hotlist p a{ color:#333;}
+.hotlist li{ width:25%; height:44px; margin-bottom:14px;text-align:center;}
+.hotlist li i{ background:url(../img/5.png) no-repeat; width:24px; height:24px; display:block; margin:0 auto;}
+.hotlist li .hot_1{ background-position:0 0;}
+.hotlist li .hot_2{ background-position:0 -24px;}
+.hotlist li .hot_3{ background-position:0 -48px;}
+.hotlist li .hot_4{ background-position:0 -72px;}
+.hotlist li .hot_5{ background-position:0 -96px;}
+.hotlist li .hot_6{ background-position:0 -120px;}
+.hotlist li .hot_7{ background-position:0 -144px;}
+.hotlist li .hot_8{ background-position:0 -168px;}
+/*白菜价*/
+.recom{width:96%; border:1px solid #e1e4e5; background:#fff; margin:10px 2% 0 2%;}
+.recom_l{ width:43%; border-right:1px solid #e1e4e5; margin-left:2%; margin-top:12px;}
+.recom_l h3{ margin:5px 0 10px 3px;}
+.recom_l h3 a{ font-size:18px; color:#fa9c59;}
+.recom_l p a{ font-size:14px; color:#333; margin-left:5px; margin-bottom:10px;}
+.recom_r{ width:52%;  margin-top:10px; }
+.r_r_t{ width:100%; height:80px; border-bottom:1px solid #e1e4e5;}
+.r_r_t img{ margin:18px 2% 0 3%;}
+.r_r_t h5{ margin:10px 0 7px 0; }
+.r_r_t h5 a{ color:#f06b56; font-size:14px;}
+.r_r_t p a{ color:#333;}
+.r_r_b{ width:100%; height:79px ;}
+.r_r_b img{ margin:18px 2% 0  3%;}
+.r_r_b h5{ margin:11px 0 7px 0;}
+.r_r_b h5 a{ color:#9669f0; font-size:14px;}
+.r_r_b p a{ color:#333;}
+/*潮流女装*/
+.frock{width:96%; height:259px;  border:1px solid #e1e4e5; background:#fff; margin:10px 2% 0 2%;}
+.frock h2{ width:100%; height:42px; line-height:24px; border-bottom:1px solid #e1e4e5; }
+.frock h2  span a{ font-size:12px; color:#333; margin-left:4px;}
+.frock h2 .biao{ display:inline-block; height:22px; border-left:4px solid #b84789; margin-top:10px; padding-left:3%; font-size:18px; color:#333;}
+.frock_top{ width:100%; height:113px;border-bottom:1px solid #e1e4e5; }
+.f_t_l{ width:58%; height:98px;border-right:1px solid #e1e4e5; margin-top:8px; border-sizing: border-box;}
+.f_t_l img{ margin-left:3%; float:left;}
+.f_t_l div{ margin-right:3%; text-align:right;}
+.f_t_l div p{ margin-top:8px; margin-bottom:6px;}
+.f_t_l div a{ color:#333;}
+.f_t_l div span a{ color:#999;}
+.f_t_r{ width:41%; height:113px; margin-top:8px;}
+.ft_r_t{ width:93%; height:48px; border-bottom:1px solid #e1e4e5; margin-left:3%; }
+.ft_r_t p{ margin-top:8px; margin-right:3%;}
+.ft_r_t p a{ color:#333;}
+.ft_r_b{ width:93%; height:48px; }
+.ft_r_b img{ margin-left:3%;}
+.ft_r_b p{ margin-top:8px; margin-right:2%;}
+.ft_r_b p a{ color:#333;}
+.frock_bott{ width:100%; height:102px;}
+.frock_bott li{ width:25%; text-align:center; line-height:30px;}
+.frock_bott li a{ color:#333;}
+.frock_bott li b{ font-weight:normal; color:#e22c37;}
+
+.foot{ width:100%; background:#e6e6e6; height:32px; margin-top:10px; line-height:32px;}
+.foot a{ color:#333;}
+.foot p a{ display:inline-block; width:60px; height:100%; text-align:center;}
+.foot span{ margin-right:20px;}
+.footer{  width:100%; height:40px; text-align:center; line-height:40px;}
