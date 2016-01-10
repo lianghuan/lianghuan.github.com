@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Document</title>
+<title>3D魔方</title>
 <style>
 	*{
 		padding: 0;
@@ -19,6 +19,13 @@
 		margin-top: -100px;
 		transform:perspective(800px) rotateY(-60deg) rotateX(30deg);
 		transform-style: preserve-3d;
+	}
+	.con{
+		 font-size: 20px;
+		 font-family: '微软雅黑';
+		 position: absolute;
+		 left: 10%;
+		 top: 8%;
 	}
 	.magic div{
 		width: 100%;
@@ -132,6 +139,7 @@
 </script>
 </head>
 <body>
+	<p class="con">按上下左右键，可改变魔方</p>
 	<div class="magic">
 		<div class="front">1</div>
 		<div class="back">2</div>
