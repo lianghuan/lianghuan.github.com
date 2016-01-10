@@ -56,7 +56,9 @@ window.onload=function(){
 				move(oCont,{left:-aPage[0].offsetWidth*this.index});
 			};
 			
-			aImg[i].onmouseover=changeClass;
+			aImg[i].onmouseover=function(){
+				changeClass();	
+			};
 			
 			aImg[i].onmouseout=function(){
 				for(var i=0;i<aImg.length;i++)
