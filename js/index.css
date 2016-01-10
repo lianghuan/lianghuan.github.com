@@ -84,7 +84,7 @@ body {
 .home_h3 .demo{width:180px; margin:0 auto; border-top:2px solid #f00; text-align: center;}
 .demo h2{ color:#f00; font-weight:bold; margin-top: 10px; font-size: 14px;}
 .html_5{ width: 100%; margin-top: 40px;}
-.html_5 li{ width: 200px; height: 200px; transition:1s all linear;  float: left; margin:40px 10px; border-radius: 6px; position:relative; overflow: hidden;}
+.html_5 li{ width: 200px; height: 200px;  float: left; margin:40px 10px; border-radius: 6px; position:relative; overflow: hidden;}
 .html_5 li a{ display:inline-block; width:100%; height:100%;}
 .html_5 .wall{ margin-left: 150px; background:url(../images/flower_h.jpg) no-repeat;}
 .html_5 li span{ height:60px; background:rgba(0,0,0,.4); position:absolute; bottom:-60px; left:0; color:#fff; font-size:20px; transition:.4s all ease; width:100%; text-align:center; line-height:60px; }

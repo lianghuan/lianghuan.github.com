@@ -4,11 +4,12 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style>
-		body{ background:#FFCC99;}
+		body{ background:#FFCC99; overflow:hidden;}
 		*{ padding: 0; margin: 0; list-style: none;}
-		.page_list{width:1100px; height: 450px;margin:50px auto;}
+		.page_list{width:1074px; height: 450px;margin:50px auto; position:relative;}
 		.page_list li{width: 336px;height: 200px;margin: 10px; float: left; border: 1px solid yellow; opacity:1;}
-		.page_btn{ cursor:pointer; width:100px; height:30px; background:url(images/play.png) no-repeat; display:block; margin-top:20px; position:relative; left:50%; top:0; margin-left:-50px;}
+		.page_btn{ cursor:pointer; width:100px; height:30px; background:url(images/play.png) no-repeat; display:block; margin:20px auto; }
+		.btnBox{ width:1074px;margin:0 auto;}
 	</style>
 	<script src="jquery-1.7.2.js"></script>
 	<script>
@@ -19,8 +20,8 @@
 		var aPos=[];
 		aLi.each(function(){ //循环
 			aPos.push({
-				left:$(this).offset().left,
-				top:$(this).offset().top
+				left:$(this).offset().left-$('.page_list').offset().left,
+				top:$(this).offset().top-$('.page_list').offset().top
 			});
 		});
 
@@ -40,20 +41,20 @@
 			}
 			else{
 				bclick=true;
-				var n=0;
+				var n=5;
 				var timer=setInterval(function(){
 					(function(index){
-						aLi.eq(n).stop().animate({width:0,height:0,left:0,top:0,opacity:0},{
+						aLi.eq(n).stop().animate({width:0,height:0,left:537,top:500,opacity:0},{
 							complete:function(){
-								if(index == aLi.length-1)
+								if(index == 0)
 								{
 									end();
 								}
 							}
 						});
 					})(n);
-					n++;
-					if(n == aLi.length)
+					n--;
+					if(n == -1)
 					{
 						clearInterval(timer);
 					}
@@ -63,7 +64,7 @@
 
 		function end()
 		{
-			var n=aLi.length-1;
+			var n=0;
 			var timer=setInterval(function(){
 				aLi.eq(n).stop().animate({
 					left:aPos[n].left+'px',
@@ -72,9 +73,10 @@
 					height:200+'px',
 					opacity:1
 				});
-				n--;
-				if(n == -1)
+				n++;
+				if(n == 6)
 				{
+					bclick=false;
 					clearInterval(timer);
 				}
 			},200);
@@ -91,6 +93,8 @@
 			<li><img src="images/5.jpg"/></li>
 			<li><img src="images/6.jpg"/></li>
 		</ul>
-		<span class="page_btn"></span>
+		<div class="btnBox">
+			<span class="page_btn"></span>
+		</div>
 </body>
 </html>

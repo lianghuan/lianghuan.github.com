@@ -152,10 +152,12 @@ window.onload=function(){
 		for(var i=0;i<aLi.length;i++){
 			aLi[i].onmouseover=function(){
 				n++;
+				this.style.transition='1s all linear'; 
 				this.style.transform='scale(1.5,1.5)';
 				this.style.zIndex=n;
 			};
 			aLi[i].onmouseout=function(){
+				this.style.transition='none';
 				this.style.transform='scale(1,1)';
 				this.style.zIndex=1;
 			};

@@ -5,11 +5,11 @@
 <title>无标题文档</title>
 <style>
 *{ padding:0; margin:0; list-style:none;}
-.ZD_card{ position:relative; min-height:700px;}
+.ZD_card{ position:relative; min-height:700px; background: #FFFFCC;}
 .ZD_card .tit{ height:140px; position:relative; padding-bottom:30px; overflow:hidden;}
 .ZD_card .tit img{ display:none;}
 .ZD_card .tit i{ position:absolute; background:url(../images/tit4.png) no-repeat 0 0; opacity:0; filter:alpha(opacity:0);}
-.card{ width:1000px; margin:0 auto;}
+.card{ width:1000px; position: absolute; left: 50%; top: 50%; margin-left: -500px; margin-top: -210px;}
 .card .box{ width:900px; margin:0 auto; height:356px; overflow:hidden; position:relative;}
 .card .nav{ width:4500px; position:absolute; top:0; left:0;}
 .card .nav>li{ float:left; width:900px;}
@@ -110,7 +110,7 @@ window.onload=function(){
 </head>
 
 <body>
-	<div class="ZD_card">
+<div class="ZD_card">
     <div class="card" id="card">
         <div class="box" id="_card">
             <span class="left"></span>
