@@ -1,10 +1,17 @@
-window.onload=function(){
-	
+window.onload=window.onresize=function(){
 	//全局变量
 	var oBot_nav=document.getElementById('bot_nav');
 	var aImg=oBot_nav.getElementsByTagName('img');
 	var oCont=document.getElementById('cont');
 	var aPage=oCont.children;
+	
+	;(function(){
+		for(var  i=0;i<aPage.length;i++){
+			aPage[i].style.width=document.documentElement.clientWidth+"px";
+			aPage[i].style.height=document.documentElement.clientHeight+"px";
+		}
+		oCont.style.width=aPage[0].offsetWidth*aPage.length+'px';
+	})();
 	
 	//图片调转个人资料
 	;(function(){
@@ -45,8 +52,6 @@ window.onload=function(){
 	})();
 	
 	//选项卡换页
-	var oCont=document.getElementById('cont');
-	var aPage=oCont.children;
 	;(function(){
 		for(var i=0;i<aImg.length;i++)
 		{
@@ -54,10 +59,11 @@ window.onload=function(){
 			aImg[i].onclick=function(){
 				changeClass();
 				move(oCont,{left:-aPage[0].offsetWidth*this.index});
+				
 			};
 			
 			aImg[i].onmouseover=function(){
-				changeClass();	
+				changeClass();
 			};
 			
 			aImg[i].onmouseout=function(){

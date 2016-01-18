@@ -39,8 +39,8 @@ body {
 .nav_top .kua{z-index:1;position:absolute; left:0; top:0; background:#CC99FF; opacity:0.5; border-radius:8px; height:60px;}
 
 /*页数内容*/
-.cont{width:6830px; height:665px; position:absolute;top:0; left:0;}
-.cont>div{float:left; width:1366px; height:665px;}
+.cont{height:100%; position:absolute;top:0; left:0;}
+.cont>div{float:left; min-width:1000px; height:100%;}
 /*第一页内容*/
 .page1{ background:#FFFFCC; position: relative;}
 .welcome{ position:absolute;left: 50%; top: 50%; margin-top: -75px; margin-left: -220px; }

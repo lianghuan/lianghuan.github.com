@@ -1,7 +1,8 @@
 @charset "utf-8";
 /* CSS Document */
+body{ min-width:1000px;}
 /*头部*/
-.headbox{ background:url(../img/2.jpg) no-repeat; width:100%; height:123px;}
+.headbox{ background:url(../img/2.jpg) no-repeat;height:123px; min-width:1000px;}
 .head{ width:1000px; height:123px;margin:0 auto;}
 .head h1{ background:url(../img/1.png); width:185px; height:44px; text-indent:-999em; margin-top:42px;}
 .head h1 a{ display:block; height:100%;}
@@ -12,11 +13,13 @@
 .head .p1 a{ color:#FFF; line-height:123px;}
 .head .p1 .one{ border-bottom:2px solid #fff; padding-bottom:4px;}
 /*导航*/
-.navbox{ background:url(../img/6.jpg); width:100%; height:42px;}
+.navbox{ background:url(../img/6.jpg); height:42px; min-width:1000px;}
 .nav{ width:1000px; height:41px; margin:0 auto;}
 .nav .navlist .first{width:200px; height:41px; position:relative; }
 .nav .navlist li{ width:88px; text-align:center; line-height:41px; position:relative;}
 .nav .navlist li a{ color:#fff; display:block; height:100%;} 
+
+.car_img{ background:url(../img/che.png); display:block; min-width:1000px; height:512px;}
 
 .details{ width:200px; height:513px;position:absolute; background:#fff; display:none;}
 .details li{ width:177px; border-bottom:2px solid #dad9d9; margin-left:11px;}

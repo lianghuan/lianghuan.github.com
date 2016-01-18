@@ -6,7 +6,9 @@
 <link rel="stylesheet" href="css/base.css"/>
 <link rel="stylesheet" href="css/index.css"/>
 <script>
- 	window.onload=function(){
+
+//test add
+ 	window.onload=window.onresize=function(){
 		var navlist=document.getElementById('navlist');
 		var aLi=navlist.getElementsByTagName('li')[0];
 		var oLi=navlist.getElementsByClassName('list');
@@ -54,7 +56,7 @@
 
 <body>
 <!--头部-->
-<div class="headbox">
+<div class="headbox" id="headbox">
 	<div class="head clearfix">
 		<h1 class="fl"><a href="#">二手车百利logo</a></h1>
 		<p class="p1 fr">
@@ -67,7 +69,7 @@
 	</div>
 </div>
 <!--导航-->
-<div class="navbox">
+<div class="navbox" id="navbox">
 	<div class="nav">
 		<ul class="navlist clearfix" id="navlist">
 			<li class="first fl"><a href="#">产品分类</a></li>
@@ -117,7 +119,7 @@
 	</div>
 </div>
 <!--车-->
-<a href="#"><img src="img/che.png"/ style="margin-bottom:13px;"></a>
+<a href="#"  class="car_img"><!--<img src="img/che.png"/>--></a>
 <!--新车品牌展区-->
 <div class="newbox">
 	<h2><a href="#">新车品牌专区</a></h2>	
